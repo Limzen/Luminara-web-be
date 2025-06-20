@@ -1,5 +1,7 @@
 const Directory = require('./Directory');
 const DirectoryRating = require('./DirectoryRating');
+const Guide = require('./Guide');
+const Article = require('./Article');
 const sequelize = require('../db/sequelize');
 
 // Set up associations
@@ -16,5 +18,7 @@ DirectoryRating.belongsTo(Directory, {
 // Export models
 module.exports = {
   Directory,
-  DirectoryRating
+  DirectoryRating,
+  Guide,
+  Article
 }; 
