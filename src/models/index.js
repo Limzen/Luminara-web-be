@@ -1,20 +1,18 @@
+const User = require('./User');
 const Directory = require('./Directory');
 const DirectoryRating = require('./DirectoryRating');
-const sequelize = require('../db/sequelize');
+const Itinerary = require('./Itinerary');
 
 // Set up associations
-Directory.hasOne(DirectoryRating, {
-  foreignKey: 'directory_id',
-  as: 'rating'
-});
+Directory.hasOne(DirectoryRating, { foreignKey: 'directory_id', as: 'rating' });
+DirectoryRating.belongsTo(Directory, { foreignKey: 'directory_id', as: 'directory' });
 
-DirectoryRating.belongsTo(Directory, {
-  foreignKey: 'directory_id',
-  as: 'directory'
-});
+User.hasMany(Itinerary, { foreignKey: 'user_id', as: 'itineraries' });
+Itinerary.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
 
-// Export models
 module.exports = {
+  User,
   Directory,
-  DirectoryRating
-}; 
+  DirectoryRating,
+  Itinerary
+};
