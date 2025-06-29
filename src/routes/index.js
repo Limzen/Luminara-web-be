@@ -8,6 +8,7 @@ const articleRoutes = require("./article.routes");
 const comunityRoutes = require("./comunity.routes");
 const authRoutes = require("./auth.routes");
 const profileRoutes = require("./profile.routes");
+const itineraryRoutes = require('./itinerary.routes'); 
 
 // Use route modules
 router.use("/directories", directoryRoutes);
@@ -16,5 +17,6 @@ router.use("/articles", articleRoutes);
 router.use("/comunities", comunityRoutes);
 router.use("/auth", authRoutes);
 router.use("/profile", profileRoutes);
+router.use('/itineraries', itineraryRoutes); 
 
 module.exports = router;
