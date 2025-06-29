@@ -1,8 +1,8 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../db/sequelize");
 
-const User = sequelize.define(
-  "User",
+const Community = sequelize.define(
+  "Community",
   {
     id: {
       type: DataTypes.BIGINT,
@@ -14,29 +14,47 @@ const User = sequelize.define(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      unique: true,
-    },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      unique: true,
-    },
-    password: {
+    name: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    photo: {
+    agama: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    jenis_kegiatan: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    lokasi_kegiatan: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    phone_number: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    email_address: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    whatsapp_group_link: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+    logo_url: {
       type: DataTypes.STRING,
       allowNull: true,
     },
   },
   {
-    tableName: "users",
+    tableName: "communities",
     timestamps: false,
   }
 );
 
-module.exports = User;
+module.exports = Community;
